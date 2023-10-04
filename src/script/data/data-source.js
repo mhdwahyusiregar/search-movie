@@ -1,7 +1,7 @@
 class DataSource {
   static searchMouvie(keyword) {
     // return fetch(`https://sports-api.dicoding.dev/teams/search?t=${keyword}`);
-    return fetch(`http://www.omdbapi.com/?apikey=e8de6d13&s=${keyword}`)
+    return fetch(`https://www.omdbapi.com/?apikey=e8de6d13&s=${keyword}`)
       .then((response) => {
         return response.json();
       })
