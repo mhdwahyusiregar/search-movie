@@ -1,10 +1,10 @@
-import "../component/mouvie-list.js";
-import "../component/search-bar.js";
-import DataSource from "../data/data-source.js";
+import '../component/mouvie-list.js';
+import '../component/search-bar.js';
+import DataSource from '../data/data-source.js';
 
 const main = () => {
-  const searchElement = document.querySelector("search-bar");
-  const mouvieListElement = document.querySelector("mouvie-List");
+  const searchElement = document.querySelector('search-bar');
+  const mouvieListElement = document.querySelector('mouvie-List');
 
   const onButtonSearchClicked = async () => {
     try {

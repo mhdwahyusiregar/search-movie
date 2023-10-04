@@ -1,7 +1,7 @@
 class MouvieItem extends HTMLElement {
   constructor() {
     super();
-    this.shadowDOM = this.attachShadow({ mode: "open" });
+    this.shadowDOM = this.attachShadow({ mode: 'open' });
   }
 
   set mouvie(mouvie) {
@@ -16,9 +16,9 @@ class MouvieItem extends HTMLElement {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-       }
-       :host {
-        display: block;
+      }
+      :host {
+        display: inline-block;
         margin-bottom: 18px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         border-radius: 10px;
@@ -28,7 +28,7 @@ class MouvieItem extends HTMLElement {
       .card-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 elemen per baris */
-        gap: 24px;
+        gap: 8px;
         justify-items: center;
       }
       
@@ -37,33 +37,32 @@ class MouvieItem extends HTMLElement {
         max-height: 100%;
         object-fit: cover;
         object-position: center;
-        display: block; 
+        display: block;
         margin: auto;
-        padding: 10px;
+        margin-top: 10px;
       }
       
-      .mouvie-info {
+      .movie-info {
         padding: 14px;
         text-align: center;
       }
       
-      .mouvie-info > h2 {
-        font-weight: lighter;
+      .movie-info > h2 {
+        font-weight: bold;
+        border-bottom: 1px solid #1a1a1a;
       }
       
-      .mouvie-info > p {
+      .movie-info > p {
         margin-top: 10px;
-        overflow: hidden;
-        text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 10; /* number of lines to show */
+        -webkit-line-clamp: 10; 
       }
       </style>
       
       <div class="card-container">
       <img class="fan-art-mouvie" src="${this._mouvie.Poster}" alt="Fan Art">
-      <div class="mouvie-info">
+      <div class="movie-info">
         <h2>${this._mouvie.Title}</h2>
         <p>${this._mouvie.Year}</p>
       </div>
@@ -72,4 +71,4 @@ class MouvieItem extends HTMLElement {
   }
 }
 
-customElements.define("mouvie-item", MouvieItem);
+customElements.define('mouvie-item', MouvieItem);

@@ -1,9 +1,9 @@
-import "./mouvie-item.js";
+import './mouvie-item.js';
 
 class MouvieList extends HTMLElement {
   constructor() {
     super();
-    this.shadowDOM = this.attachShadow({ mode: "open" });
+    this.shadowDOM = this.attachShadow({ mode: 'open' });
   }
 
   set mouvies(mouvies) {
@@ -28,13 +28,13 @@ class MouvieList extends HTMLElement {
   }
 
   render() {
-    this.shadowDOM.innerHTML = "";
+    this.shadowDOM.innerHTML = '';
     this._mouvies.forEach((mouvie) => {
-      const mouvieItemElement = document.createElement("mouvie-item");
+      const mouvieItemElement = document.createElement('mouvie-item');
       mouvieItemElement.mouvie = mouvie;
 
       this.shadowDOM.appendChild(mouvieItemElement);
     });
   }
 }
-customElements.define("mouvie-list", MouvieList);
+customElements.define('mouvie-list', MouvieList);

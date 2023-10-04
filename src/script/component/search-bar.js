@@ -1,7 +1,7 @@
 class SearchBar extends HTMLElement {
   constructor() {
     super();
-    this.shadowDOM = this.attachShadow({ mode: "open" });
+    this.shadowDOM = this.attachShadow({ mode: 'open' });
   }
 
   connectedCallback() {
@@ -14,21 +14,24 @@ class SearchBar extends HTMLElement {
   }
 
   get value() {
-    return this.shadowDOM.querySelector("#searchElement").value;
+    return this.shadowDOM.querySelector('#searchElement').value;
   }
 
   render() {
     this.shadowDOM.innerHTML = `
     <style>
     .search-container {
-      max-width: 800px;
+      display: flex;
+      max-width: 1100px;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       padding: 16px;
       border-radius: 5px;
       display: flex;
       position: sticky;
-      top: 60px;
+      top: 70px;
       background-color: white;
+      justify-content: center;
+      aign-items: center;
     }
     
     .search-container > input {
@@ -63,11 +66,17 @@ class SearchBar extends HTMLElement {
       border: 0;
       text-transform: uppercase;
     }
+    .search-container > button:hover {
+      background-color: white;
+      color: #1a1a1a;
+      border-bottom: 2px solid #C92C6D;
+    }
     
     @media screen and (max-width: 550px) {
       .search-container {
         flex-direction: column;
         position: static;
+        margin-top: 70px;
       }
     
       .search-container > input {
@@ -87,9 +96,9 @@ class SearchBar extends HTMLElement {
     </div>`;
 
     this.shadowDOM
-      .querySelector("#searchButtonElement")
-      .addEventListener("click", this._clickEvent);
+      .querySelector('#searchButtonElement')
+      .addEventListener('click', this._clickEvent);
   }
 }
 
-customElements.define("search-bar", SearchBar);
+customElements.define('search-bar', SearchBar);
